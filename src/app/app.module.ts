@@ -7,6 +7,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
+import { CoreModule }    from './core/core.module';
 import { AppComponent } from './app.component';
 
 
@@ -21,9 +22,12 @@ import { AppComponent } from './app.component';
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    CoreModule,
   ],
   providers: [],
+  exports: [ AppComponent ],
+  entryComponents: [ AppComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
