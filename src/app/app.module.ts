@@ -1,15 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
-import { CoreModule }    from './core/core.module';
+import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './route.module';
 
+import { VehiclesModule } from './vehicles/vehicles.module';
+import { StationsModule } from './stations/stations.module';
 
 @NgModule({
   declarations: [
@@ -24,10 +27,12 @@ import { AppComponent } from './app.component';
     MatButtonModule,
     MatIconModule,
     CoreModule,
+    AppRoutingModule,
+    VehiclesModule,
+    StationsModule
   ],
-  providers: [],
-  exports: [ AppComponent ],
-  entryComponents: [ AppComponent ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
