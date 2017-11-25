@@ -1,4 +1,10 @@
 <!--app-fuel-consumption></app-fuel-consumption>-->
-<mat-list>
-    <mat-list-item *ngFor="let vehicle of vehicleList"> {{ vehicle.name }} - {{vehicle.type}} - {{vehicle.warningLevel}}</mat-list-item>
-  </mat-list>
+  <mat-card>
+    <div class="col-md-6">
+      <div style="display: block;">
+        <mat-list>
+            <mat-list-item *ngFor="let vehicle of vehicleList"> {{ vehicle.name }} - {{vehicle.type}} - {{vehicle.warningLevel}}</mat-list-item>
+          </mat-list>
+      </div>
+    </div>
+  </mat-card>
