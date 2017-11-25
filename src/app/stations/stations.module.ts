@@ -2,15 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StationsComponent } from './stations.component';
 import { StationsFuelPumpedComponent } from './stations-fuel-pumped/stations-fuel-pumped.component';
+import { StationsFuelConsumptionComponent } from './stations-fuel-consumption/stations-fuel-consumption.component';
 import { ChartsModule } from 'ng2-charts';
 import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   imports: [
     CommonModule,
     ChartsModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule
   ],
-  declarations: [StationsComponent, StationsFuelPumpedComponent]
+  declarations: [StationsComponent, StationsFuelPumpedComponent, StationsFuelConsumptionComponent]
 })
 export class StationsModule { }
