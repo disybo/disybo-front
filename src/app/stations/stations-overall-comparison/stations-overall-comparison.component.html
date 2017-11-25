@@ -4,8 +4,8 @@
   </mat-card-title>
   <mat-card-content>
     <canvas baseChart
-            [data]="pieChartData"
-            [labels]="pieChartLabels"
+            [data]="overallData.data"
+            [labels]="overallData.labels"
             [chartType]="pieChartType"
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>

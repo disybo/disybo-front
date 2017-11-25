@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'stations-filter',
@@ -7,16 +7,19 @@ import { Component, OnInit} from '@angular/core';
 })
 export class StationsFilterComponent implements OnInit {
 
-  constructor() { }
+  granularity: string;
+  @Input() endDateValue: Date;
+  @Input() startDateValue: Date;
+  @Output() onRefresh = new EventEmitter();
 
-  ngOnInit() {
+  constructor() { 
   }
 
-  granularity: string;
+  ngOnInit() {
+    this.granularity = "yearly"
+  }
 
-  granularity_choices = [
-    'Daily',
-    'Monthly',
-    'Yearly'
-  ];
+  refresh() { 
+    this.onRefresh.emit({'startDate': this.startDateValue, 'endDate': this.endDateValue, 'granularity': this.granularity })
+  }
 }
