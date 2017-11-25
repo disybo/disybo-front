@@ -16,11 +16,6 @@ import {MatButtonModule} from '@angular/material/button';
 import { StationsOverallComparisonComponent } from './stations-overall-comparison/stations-overall-comparison.component';
 import { StationsFuelTypeComponent } from './stations-fuel-type/stations-fuel-type.component';
 
-
-
-
-
-
 @NgModule({
   imports: [
     CommonModule,
