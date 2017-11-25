@@ -15,8 +15,10 @@ import { AppRoutingModule } from './route.module';
 
 import { ExampleApiService } from './exampleApi.service';
 
+import { VehicleModule } from './vehicle/vehicle.module';
 import { VehiclesModule } from './vehicles/vehicles.module';
 import { VehiclesRegistryModule } from './vehicles-registry/vehicles-registry.module';
+import { StationModule } from './station/station.module';
 import { StationsModule } from './stations/stations.module';
 import { StationsRegistryModule } from './stations-registry/stations-registry.module';
 
@@ -37,8 +39,10 @@ import { StationsRegistryModule } from './stations-registry/stations-registry.mo
     CoreModule,
     AppRoutingModule,
 
+    VehicleModule,
     VehiclesModule,
     VehiclesRegistryModule,
+    StationModule,
     StationsModule,
     StationsRegistryModule
   ],

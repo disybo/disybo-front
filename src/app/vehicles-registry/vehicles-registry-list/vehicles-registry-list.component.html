@@ -2,12 +2,10 @@
   <mat-nav-list>
     <div *ngFor="let vehicle of vehicles">
       <mat-list-item (click)="goTo(vehicle)">
-        <button mat-button>
-          <mat-icon>directions_car</mat-icon>
-          <span>{{vehicle.name}}</span>
-          <span>{{vehicle.type}}</span>
-          <span>{{vehicle.year}}</span>
-        </button>
+        <mat-icon>directions_car</mat-icon>
+        <span>{{vehicle.name}}</span>
+        <span>{{vehicle.type}}</span>
+        <span>{{vehicle.year}}</span>
       </mat-list-item>
       <mat-divider></mat-divider>
     </div>

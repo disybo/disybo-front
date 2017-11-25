@@ -21,7 +21,7 @@ export class VehiclesRegistryListComponent implements OnInit {
   ]
 
   goTo(vehicle: any): void {
-   this.router.navigate(['/vehicles/'+ vehicle.id]);
+   this.router.navigate(['/vehicle/'+ vehicle.id]);
   }
 
 }
