@@ -3,7 +3,7 @@
     <div *ngFor="let station of stations">
       <mat-list-item (click)="goTo(station)">
         <mat-icon>local_gas_station</mat-icon>
-        <span>{{station.name}}</span>
+        <span>{{station.display_name}}</span>
       </mat-list-item>
       <mat-divider></mat-divider>
     </div>
