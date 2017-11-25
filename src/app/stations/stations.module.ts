@@ -6,6 +6,8 @@ import { StationsFuelConsumptionComponent } from './stations-fuel-consumption/st
 import { ChartsModule } from 'ng2-charts';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     ChartsModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDatepickerModule
   ],
   declarations: [StationsComponent, StationsFuelPumpedComponent, StationsFuelConsumptionComponent]
 })
