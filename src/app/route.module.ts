@@ -7,6 +7,7 @@ import { VehiclesRegistryComponent } from './vehicles-registry/vehicles-registry
 import { StationComponent } from './station/station.component';
 import { StationsComponent } from './stations/stations.component';
 import { StationsRegistryComponent } from './stations-registry/stations-registry.component';
+import { FrontPageComponent } from './front-page/front-page.component'
 
 const appRoutes: Routes = [
     { path: 'analytics/vehicles', component: VehiclesComponent },
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     { path: 'registry/stations', component: StationsRegistryComponent },
     { path: 'vehicle/:id', component: VehicleComponent },
     { path: 'station/:id', component: StationComponent },
+    { path: '', component:  FrontPageComponent},
     { path: '**', component: VehiclesComponent }
   ];
 
