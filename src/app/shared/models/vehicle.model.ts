@@ -3,4 +3,5 @@ export class Vehicle {
     name: string
     km: number
     type: string
+    warningLevel: string
   }

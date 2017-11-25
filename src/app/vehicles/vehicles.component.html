@@ -1,1 +1,4 @@
-<app-fuel-consumption></app-fuel-consumption>
+<!--app-fuel-consumption></app-fuel-consumption>-->
+<mat-list>
+    <mat-list-item *ngFor="let vehicle of vehicleList"> {{ vehicle.name }} - {{vehicle.type}} - {{vehicle.warningLevel}}</mat-list-item>
+  </mat-list>
