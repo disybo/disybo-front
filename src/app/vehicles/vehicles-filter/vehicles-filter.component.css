@@ -1,3 +1,15 @@
 mat-card {
   margin: 1em;
 }
+
+mat-form-field {
+  margin: 1em;
+}
+
+mat-radio-group {
+  margin: 1em;
+}
+
+button {
+  margin: 1em;
+}

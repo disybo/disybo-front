@@ -13,6 +13,11 @@ export class VehicleListComponent implements OnInit {
 
   constructor() { }
 
+  public barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+
   ngOnInit() {
     // initialize list when we receive input
     this.filteredList = this.vehicleList

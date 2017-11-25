@@ -49,6 +49,8 @@ export class FuelConsumptionComponent implements OnInit {
   public lineChartLabels:Array<any> = 
   ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
   public lineChartOptions:any = {
+    elements:{line:{fill:false}},
+    scaleShowVerticalLines: false,
     responsive: true
   };
   public lineChartColors:Array<any> = [
