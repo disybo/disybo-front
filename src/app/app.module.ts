@@ -4,6 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,7 +16,9 @@ import { AppRoutingModule } from './route.module';
 import { ExampleApiService } from './exampleApi.service';
 
 import { VehiclesModule } from './vehicles/vehicles.module';
+import { VehiclesRegistryModule } from './vehicles-registry/vehicles-registry.module';
 import { StationsModule } from './stations/stations.module';
+import { StationsRegistryModule } from './stations-registry/stations-registry.module';
 
 @NgModule({
   declarations: [
@@ -27,13 +30,17 @@ import { StationsModule } from './stations/stations.module';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatExpansionModule,
     MatListModule,
     MatButtonModule,
     MatIconModule,
     CoreModule,
     AppRoutingModule,
+
     VehiclesModule,
-    StationsModule
+    VehiclesRegistryModule,
+    StationsModule,
+    StationsRegistryModule
   ],
   providers: [ExampleApiService],
   bootstrap: [
