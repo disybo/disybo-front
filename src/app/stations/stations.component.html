@@ -1,8 +1,8 @@
-<div fxLayout="column" fxLayoutAlign="center stretch" >
-  <stations-filter></stations-filter>
-</div>
-<div fxLayout="row" fxLayoutAlign="space-around" >
-    <stations-fuel-pumped></stations-fuel-pumped>
-    <stations-fuel-consumption></stations-fuel-consumption>
+<div fxLayout="column" fxLayoutAlign="space-around stretch">
+    <stations-filter fxFlex="100%"></stations-filter>
+    <div fxLayout="row">
+        <stations-fuel-pumped fxFlex="50%"></stations-fuel-pumped>
+        <stations-fuel-consumption fxFlex="50%"></stations-fuel-consumption>
+    </div>
 </div>
 

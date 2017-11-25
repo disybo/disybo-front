@@ -1,19 +1,20 @@
 <mat-card>
     <mat-card-content>
-            <mat-form-field class="example-full-width">
-                    <input matInput [matDatepicker]="startDate" placeholder="Choose a start date">
-                    <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
-                    <mat-datepicker touchUi="true" #startDate></mat-datepicker>
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                    <input matInput [matDatepicker]="endDate" placeholder="Choose an end date">
-                    <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
-                    <mat-datepicker touchUi="true" #endDate></mat-datepicker>
-                </mat-form-field>
-                <mat-radio-group [(ngModel)]="granularity">
-                        <mat-radio-button value="0">Daily</mat-radio-button>
-                        <mat-radio-button value="1">Monthly</mat-radio-button>
-                        <mat-radio-button value="2">Yearly</mat-radio-button>
-                </mat-radio-group>   
+        <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="startDate" placeholder="Choose a start date">
+            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+            <mat-datepicker touchUi="true" #startDate></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="endDate" placeholder="Choose an end date">
+            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+            <mat-datepicker touchUi="true" #endDate></mat-datepicker>
+        </mat-form-field>
+        <mat-radio-group [(ngModel)]="granularity">
+                <mat-radio-button value="0">Daily</mat-radio-button>
+                <mat-radio-button value="1">Monthly</mat-radio-button>
+                <mat-radio-button value="2">Yearly</mat-radio-button>
+        </mat-radio-group>
+        <button mat-raised-button color="btn-success">Refresh</button>
     </mat-card-content>   
 </mat-card>
