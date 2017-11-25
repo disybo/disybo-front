@@ -1,4 +1,4 @@
 <div fxFill>
-    <app-vehicles-registry-search></app-vehicles-registry-search>
-    <app-vehicles-registry-list></app-vehicles-registry-list>
+    <app-vehicles-registry-search (search)="searchFn($event)"></app-vehicles-registry-search>
+    <app-vehicles-registry-list [vehicles]="vehicles"></app-vehicles-registry-list>
 </div>
