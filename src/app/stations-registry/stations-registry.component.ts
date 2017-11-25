@@ -18,4 +18,7 @@ export class StationsRegistryComponent implements OnInit {
     this.service.getStations();
   }
 
+  searchFn(text: string) {
+    console.log("SEARCH", text)
+  }
 }

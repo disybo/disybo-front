@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-stations-registry-search',
   templateUrl: './stations-registry-search.component.html',
-  styleUrls: ['./stations-registry-search.component.css']
+  styleUrls: ['./stations-registry-search.component.css'],
 })
 export class StationsRegistrySearchComponent implements OnInit {
+  searchText: string = '';
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
+  @Output() search = new EventEmitter<string>();
 
-  search(){
-    console.log("SEARCH")
+  onSearch() {
+    this.search.emit(this.searchText);
   }
 }

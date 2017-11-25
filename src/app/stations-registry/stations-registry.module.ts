@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -16,6 +17,7 @@ import { StationsService } from './shared/stations.service';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule, ReactiveFormsModule,
     FlexLayoutModule,
     MatInputModule,
     MatSelectModule,

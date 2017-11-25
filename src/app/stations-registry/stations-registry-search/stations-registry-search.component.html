@@ -1,8 +1,8 @@
 <mat-card fxLayout="row" fxLayoutGap="20px">
   <mat-form-field fxFlex>
-    <input matInput placeholder="Station name" value="station1">
+    <input matInput placeholder="Search" [(ngModel)]="searchText">
   </mat-form-field>
-  <button mat-icon-button (click)="search()">
+  <button mat-icon-button (click)="onSearch()">
     <mat-icon aria-label="search">search</mat-icon>
   </button>
 </mat-card>
