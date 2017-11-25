@@ -1,19 +1,17 @@
 export class Consumption {
-  
   constructor() {
     this.labels = [];
-    this.data = []
+    this.data = [];
   }
-  
+
   labels: string[];
   data: StationConsumption[];
 }
 
 export class StationConsumption {
-
   constructor() {
-    this.label = "";
-    this.data = []
+    this.label = '';
+    this.data = [];
   }
 
   data: number[];

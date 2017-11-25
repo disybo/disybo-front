@@ -14,6 +14,21 @@ export class StationsService extends ApiService {
     //** API controller */
     controller = 'stations';
 
+    month: string[] = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+     "November",
+     "December",
+    ];
+
     //** The Fuel subject */
     private _fuel: BehaviorSubject<Fuel[]> = new BehaviorSubject([]);
     private _overall: BehaviorSubject<OverallData> = new BehaviorSubject(new OverallData)
@@ -76,19 +91,19 @@ export class StationsService extends ApiService {
     } 
 
     public getStationsConsumption(startDate: Date, endDate: Date): void {
-        this.getRequest('fuel/consumption', [
+        this.getRequest('fuel/granular', [
             {key: 'start', value: startDate.toJSON()}, 
             {key: 'end', value: endDate.toJSON()}
           ]).subscribe(data => {
             let consumption = new Consumption;
-            data[0].data.forEach(element => {
-                consumption.labels.push(element.date);
+            data[0].fuel_data.forEach(element => {
+                consumption.labels.push(this.month[new Date(element.month).getMonth()]);
             });
             data.forEach(e => {
                 let station = new StationConsumption();
-                station.label = e.station;
-                e.data.forEach(d => {
-                    station.data.push(d.amount);
+                station.label = e.display_name;
+                e.fuel_data.forEach(d => {
+                    station.data.push(d.fuel_volume);
                 });
                 consumption.data.push(station);
             });

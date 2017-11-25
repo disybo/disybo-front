@@ -21,17 +21,23 @@ export class StationsFuelConsumptionComponent implements OnInit, OnChanges {
     }
   }
 
-  // lineChart
-  public lineChartData:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Station 1'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Station 2'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Station 3'},
-    {data: [58, 88, 67, 33, 230, 57, 50], label: 'Station 4'}
-  ];
-  public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions:any = {
     responsive: true,
-    elements:{line:{fill:false}}
+    elements:{line:{fill:false}},
+    scales: {
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Total amount extracted (Liters)'
+        }
+      }],
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Month'
+        }
+      }]
+    }
   };
 
   public lineChartLegend:boolean = true;
