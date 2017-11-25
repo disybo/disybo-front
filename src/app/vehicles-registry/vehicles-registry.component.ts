@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VehiclesService } from './shared/vehicles.service';
+import { Vehicle } from './shared/vehicle.model';
 
 @Component({
   selector: 'app-vehicles-registry',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vehicles-registry.component.css']
 })
 export class VehiclesRegistryComponent implements OnInit {
+  vehicles: Vehicle[];
 
-  constructor() { }
+  constructor(private service: VehiclesService) { }
 
   ngOnInit() {
+    this.service.vehicles.subscribe(update => this.vehicles = update)
+    this.service.getVehicles()
   }
 
+  searchFn(query: any) {
+    console.log("SEARCH", query)
+  }
 }

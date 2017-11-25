@@ -3,7 +3,8 @@
     <div *ngFor="let vehicle of vehicles">
       <mat-list-item (click)="goTo(vehicle)">
         <mat-icon>directions_car</mat-icon>
-        <span>{{vehicle.name}}</span>
+        <span>{{vehicle.vehicle_id}}</span>
+        <span>{{vehicle.description}}</span>
         <span>{{vehicle.type}}</span>
         <span>{{vehicle.year}}</span>
       </mat-list-item>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-vehicles-registry-search',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vehicles-registry-search.component.css']
 })
 export class VehiclesRegistrySearchComponent implements OnInit {
+  @Output() search = new EventEmitter<any>();
+
+  searchText: string = '';
+  year: string = '2015';
+  type: string = '1';
+
   types = [
     {value: '0', viewValue: 'Type 1'},
     {value: '1', viewValue: 'Type 2'},
@@ -29,8 +35,8 @@ export class VehiclesRegistrySearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  search(){
-    console.log("SEARCH")
+  onSearch(){
+    this.search.emit({'text': this.searchText, 'type': this.type, 'year': this.year})
   }
 
 }

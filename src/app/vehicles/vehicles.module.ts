@@ -7,6 +7,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { VehiclesComponent } from './vehicles.component';
 import { FuelConsumptionComponent } from './fuel-consumption/fuel-consumption.component';
@@ -23,7 +28,12 @@ import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
     FlexLayoutModule,
     MatIconModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatInputModule,
+    MatButtonModule
   ],
   declarations: [VehiclesComponent, FuelConsumptionComponent, VehiclesFilterComponent, VehiclesPollutionComponent, VehicleListComponent],
   exports: [VehiclesComponent]
