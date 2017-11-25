@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>
+      <span class="mat-headline">Fuel Consumption for Fuel Stations</span>  
+  </mat-card-title>
+  <mat-card-content>
+      <div style="display: block;">
+          <canvas baseChart
+                      [datasets]="lineChartData"
+                      [labels]="lineChartLabels"
+                      [options]="lineChartOptions"
+                      [colors]="lineChartColorsRandom"
+                      [legend]="lineChartLegend"
+                      [chartType]="lineChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+        </div>
+  </mat-card-content> 
+</mat-card>
+      
