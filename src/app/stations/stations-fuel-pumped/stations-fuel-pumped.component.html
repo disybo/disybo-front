@@ -3,7 +3,6 @@
       <span class="mat-headline">Ingoing vs. Outgoing Fuel Comparison</span>  
     </mat-card-title>
     <mat-card-content>
-        <div style="display: block">
             <canvas baseChart
                     [datasets]="barChartData"
                     [labels]="barChartLabels"
@@ -12,7 +11,5 @@
                     [chartType]="barChartType"
                     (chartHover)="chartHovered($event)"
                     (chartClick)="chartClicked($event)"></canvas>
-          </div>
-          <button (click)="randomize()">Update</button>
     </mat-card-content>
 </mat-card> 

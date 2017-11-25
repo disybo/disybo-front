@@ -9,6 +9,7 @@ export class StationsFuelPumpedComponent implements OnInit {
   constructor() { }
   
   ngOnInit() {
+    
   }
 
   public barChartOptions:any = {

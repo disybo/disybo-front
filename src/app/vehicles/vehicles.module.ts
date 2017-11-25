@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 import { ChartsModule } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -13,6 +14,7 @@ import { VehiclesPollutionComponent } from './vehicles-pollution/vehicles-pollut
   imports: [
     CommonModule,
     MatCardModule,
+    MatListModule,
     ChartsModule,
     FlexLayoutModule
   ],
