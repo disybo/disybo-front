@@ -14,8 +14,8 @@ export abstract class ApiService {
 
   private createRequestOptions(params: any): Object {
     const httpParams = new HttpParams();
-    params.forEach((key, value) => {
-      httpParams.set(key, value)
+    params.forEach(e => {
+      httpParams.set(e.key, e.value)
     });
 
     return {

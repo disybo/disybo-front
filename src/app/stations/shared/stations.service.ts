@@ -19,8 +19,11 @@ export class StationsService extends ApiService {
         return new Observable(fn => this._fuel.subscribe(fn));
     }
 
-    public getFuelData(): void {
-        this.getRequest('fuel/types', []).subscribe(data => {
+    public getOverallFuelData(startDate: Date, endDate: Date): void {
+        this.getRequest('fuel/overall', [
+          {key: 'start', value: startDate}, 
+          {key: 'end', value: endDate}
+        ]).subscribe(data => {
             this._fuel.next(data);
         });
     }
