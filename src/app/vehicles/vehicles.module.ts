@@ -10,6 +10,7 @@ import { VehiclesComponent } from './vehicles.component';
 import { FuelConsumptionComponent } from './fuel-consumption/fuel-consumption.component';
 import { VehiclesFilterComponent } from './vehicles-filter/vehicles-filter.component';
 import { VehiclesPollutionComponent } from './vehicles-pollution/vehicles-pollution.component';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { VehiclesPollutionComponent } from './vehicles-pollution/vehicles-pollut
     FlexLayoutModule,
     MatIconModule
   ],
-  declarations: [VehiclesComponent, FuelConsumptionComponent, VehiclesFilterComponent, VehiclesPollutionComponent],
+  declarations: [VehiclesComponent, FuelConsumptionComponent, VehiclesFilterComponent, VehiclesPollutionComponent, VehicleListComponent],
   exports: [VehiclesComponent]
 })
 export class VehiclesModule { }
