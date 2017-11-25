@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { ChartsModule } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 
 import { VehiclesComponent } from './vehicles.component';
 import { FuelConsumptionComponent } from './fuel-consumption/fuel-consumption.component';
@@ -16,7 +17,8 @@ import { VehiclesPollutionComponent } from './vehicles-pollution/vehicles-pollut
     MatCardModule,
     MatListModule,
     ChartsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule
   ],
   declarations: [VehiclesComponent, FuelConsumptionComponent, VehiclesFilterComponent, VehiclesPollutionComponent],
   exports: [VehiclesComponent]

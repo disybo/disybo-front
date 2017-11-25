@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title>
+      <span class="mat-headline">Overall comparison between fuel stations</span>  
+  </mat-card-title>
+  <mat-card-content>
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </mat-card-content>
+</mat-card>

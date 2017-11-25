@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Vehicle } from '../shared/models/vehicle.model'
 
 @Component({
@@ -9,7 +8,8 @@ import { Vehicle } from '../shared/models/vehicle.model'
 })
 export class VehiclesComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() { }
 
@@ -22,6 +22,6 @@ export class VehiclesComponent implements OnInit {
   vehicle7: Vehicle = {id:'id', name: 'vehicle7', km: 123, type:'medium', warningLevel:'warning'}
   vehicle8: Vehicle = {id:'id', name: 'vehicle8', km: 123, type:'big', warningLevel:'warning'}
 
-  vehicleList: Vehicle[] =[this.vehicle1, this.vehicle2, this.vehicle3, this.vehicle4,
+  vehicleList: Vehicle[] = [this.vehicle1, this.vehicle2, this.vehicle3, this.vehicle4,
     this.vehicle5, this.vehicle6, this.vehicle7, this.vehicle8]
 }

@@ -1,10 +1,16 @@
 <div fxLayout="column" fxLayoutAlign="space-around stretch">
     <app-vehicles-filter fxFlex="100%"></app-vehicles-filter>
     <div fxLayout="row">
-        <app-fuel-consumption fxFlex="50%"></app-fuel-consumption>
-        <app-vehicles-pollution fxFlex="50%"></app-vehicles-pollution>
+        <app-fuel-consumption fxFlex="33%"></app-fuel-consumption>
+        <app-vehicles-pollution fxFlex="33%"></app-vehicles-pollution>
+        <mat-card fxFlex="33%">
+            <mat-list>
+                <mat-list-item *ngFor="let vehicle of vehicleList">
+                        <mat-icon mat-list-icon>directions_car</mat-icon>
+                    {{ vehicle.name }} - {{vehicle.type}} - {{vehicle.warningLevel}}
+                </mat-list-item>
+            </mat-list>
+          </mat-card>
     </div>
 </div>
-<mat-list>
-    <mat-list-item *ngFor="let vehicle of vehicleList"> {{ vehicle.name }} - {{vehicle.type}} - {{vehicle.warningLevel}}</mat-list-item>
-</mat-list>
+
