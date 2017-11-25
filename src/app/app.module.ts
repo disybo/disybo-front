@@ -8,6 +8,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AgmCoreModule } from '@agm/core';
 
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,8 @@ import { VehiclesRegistryModule } from './vehicles-registry/vehicles-registry.mo
 import { StationModule } from './station/station.module';
 import { StationsModule } from './stations/stations.module';
 import { StationsRegistryModule } from './stations-registry/stations-registry.module';
+
+import { secret } from '../environments/secret';
 
 @NgModule({
   declarations: [
@@ -37,8 +40,11 @@ import { StationsRegistryModule } from './stations-registry/stations-registry.mo
     MatButtonModule,
     MatIconModule,
     CoreModule,
-    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: secret.mapKey
+    }),
 
+    AppRoutingModule,
     VehicleModule,
     VehiclesModule,
     VehiclesRegistryModule,
