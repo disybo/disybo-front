@@ -1,16 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import {FuelTypeData} from '../shared/fueltype.model'
+import {Fuel} from '../shared/fuel.model'
 
 @Component({
   selector: 'stations-fuel-type',
   templateUrl: './stations-fuel-type.component.html',
   styleUrls: ['./stations-fuel-type.component.css']
 })
-export class StationsFuelTypeComponent implements OnInit {
+export class StationsFuelTypeComponent implements OnInit, OnChanges {
+  
+  @Input() fuelTypeData: FuelTypeData;
 
   constructor() { }
   
   ngOnInit() {
-    
+     
+  }
+
+  // Variable to keep track if the data has arrived
+  public dataReady:boolean = false;
+
+  ngOnChanges(changes): void {
+    if(this.fuelTypeData.data.length > 0) {
+      this.changeChartData();
+      this.dataReady = true;
+    }
   }
 
   public barChartOptions:any = {
@@ -26,16 +40,49 @@ export class StationsFuelTypeComponent implements OnInit {
   }
   };
 
-  // TODO get proper years
-  public barChartLabels:string[] = ['Fuel Station 1', 'Fuel Station 2', 'Fuel Station 3', 
-                                    'Fuel Station 4', 'Fuel Station 5', 'Fuel Station 6', 'Fuel Station 7', 'Fuel Station 8'];
+  changeChartData() {
+    this.barChartLabels = this.fuelTypeData.labels;
+
+    this.fuelTypeData.data.forEach(station =>
+        station.forEach(element => {
+          switch(element.display_name) {
+              case this.dieselLabel: {
+                this.dieselData.push(element.fuel_volume)
+              }
+              case this.poltLabel: {
+                this.poltData.push(element.fuel_volume)
+              }
+              case this.ADBlueLabel: {
+                this.ADBlueData.push(element.fuel_volume)  
+              }
+              case this.gasLabel: {
+                this.gasData.push(element.fuel_volume)  
+              }
+          }
+        })
+    )
+  }
+
+  public dieselData = []
+  public dieselLabel = "Diesel"
+  public poltData = []
+  public poltLabel = "polttoöljy"
+  public ADBlueData = []
+  public ADBlueLabel = "ADblue"
+  public gasData = []
+  public gasLabel = "bensa"
+
+
+  public barChartLabels:string[] = []
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
 
   public barChartData:any[] = [
     // TODO Make API calls to fetch data from server
-    {data: [65, 59, 80, 81, 56, 55, 40, 30], label: 'Petrol'},
-    {data: [28, 48, 40, 19, 86, 27, 90, 20], label: 'Diesel'}
+    {data: this.dieselData, label: "Diesel"},
+    {data: this.poltData, label: "Fuel Oil"},
+    {data: this.ADBlueData, label: "AD Blue"},
+    {data: this.gasData, label: "Gas"}
   ];
 
   // events
@@ -46,26 +93,4 @@ export class StationsFuelTypeComponent implements OnInit {
   public chartHovered(e:any):void {
     console.log(e);
   }
-
-  public randomize():void {
-    // Only Change 3 values
-    let data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
-    let clone = JSON.parse(JSON.stringify(this.barChartData));
-    clone[0].data = data;
-    this.barChartData = clone;
-    /**
-    * (My guess), for Angular to recognize the change in the dataset
-    * it has to change the dataset variable directly,
-    * so one way around it, is to clone the data, change it and then
-    * assign it;
-    */
-  }
-
 }
