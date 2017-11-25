@@ -61,7 +61,7 @@ export class StationsService extends ApiService {
                 if (element.fuel_volume != null) {
                     overallData.labels.push(element.display_name);
                     overallData.data.push(element.fuel_volume)
-                }        
+                }
             });
             this._overall.next(overallData);
         });
