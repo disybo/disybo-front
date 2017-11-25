@@ -1,0 +1,19 @@
+<mat-card fxLayout="row" fxLayoutGap="20px">
+  <mat-form-field fxFlex>
+    <input matInput placeholder="Vehicle name" value="Scania">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Vehicle type">
+      <mat-option *ngFor="let type of types" [value]="type.value">
+        {{ type.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Vehicle year">
+      <mat-option *ngFor="let year of years" [value]="year.value">
+        {{ year.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card>
