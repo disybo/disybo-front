@@ -1,22 +1,22 @@
 <mat-card fxLayout="row" fxLayoutGap="20px">
   <mat-form-field fxFlex>
-    <input matInput placeholder="Vehicle name" value="Scania">
+    <input matInput placeholder="Vehicle name" [(ngModel)]="searchText">
   </mat-form-field>
   <mat-form-field>
-    <mat-select placeholder="Vehicle type">
+    <mat-select placeholder="Vehicle type" [(ngModel)]="type">
       <mat-option *ngFor="let type of types" [value]="type.value">
         {{ type.viewValue }}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
-    <mat-select placeholder="Vehicle year">
+    <mat-select placeholder="Vehicle year" [(ngModel)]="year">
       <mat-option *ngFor="let year of years" [value]="year.value">
         {{ year.viewValue }}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-icon-button (click)="search()">
+  <button mat-icon-button (click)="onSearch()">
     <mat-icon aria-label="search">search</mat-icon>
   </button>
 </mat-card>
