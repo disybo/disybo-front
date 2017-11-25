@@ -2,12 +2,12 @@
   vehicles-filter works!
   <mat-card-content>
       <mat-form-field class="example-full-width">
-          <input matInput [matDatepicker]="startDate" placeholder="Choose a start date">
+          <input matInput #sDateValue [matDatepicker]="startDate" (dateChange)="firstDate(sDateValue.value)" placeholder="Choose a start date">
           <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
           <mat-datepicker touchUi="true" #startDate></mat-datepicker>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-          <input matInput [matDatepicker]="endDate" placeholder="Choose an end date">
+          <input matInput #eDateValue (dateChange)="endfunc(eDateValue.value)" [matDatepicker]="endDate" placeholder="Choose an end date">
           <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
           <mat-datepicker touchUi="true" #endDate></mat-datepicker>
       </mat-form-field>
@@ -16,6 +16,6 @@
               <mat-radio-button value="1">Monthly</mat-radio-button>
               <mat-radio-button value="2">Yearly</mat-radio-button>
       </mat-radio-group>
-      <button mat-raised-button color="btn-success">Refresh</button>
+      <button mat-raised-button color="btn-success" (click)="refreshfunc(sDateValue.value, eDateValue.value)">Refresh</button>
   </mat-card-content> 
 </mat-card>
