@@ -14,6 +14,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { StationsOverallComparisonComponent } from './stations-overall-comparison/stations-overall-comparison.component';
+import { StationsFuelTypeComponent } from './stations-fuel-type/stations-fuel-type.component';
 
 
 
@@ -35,6 +36,6 @@ import { StationsOverallComparisonComponent } from './stations-overall-compariso
     ReactiveFormsModule,
     MatButtonModule
   ],
-  declarations: [StationsComponent, StationsFuelPumpedComponent, StationsFuelConsumptionComponent, StationsFilterComponent, StationsOverallComparisonComponent]
+  declarations: [StationsComponent, StationsFuelPumpedComponent, StationsFuelConsumptionComponent, StationsFilterComponent, StationsOverallComparisonComponent, StationsFuelTypeComponent]
 })
 export class StationsModule { }
