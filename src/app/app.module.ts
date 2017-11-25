@@ -12,6 +12,8 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './route.module';
 
+import { ExampleApiService } from './exampleApi.service';
+
 import { VehiclesModule } from './vehicles/vehicles.module';
 import { StationsModule } from './stations/stations.module';
 
@@ -33,6 +35,7 @@ import { StationsModule } from './stations/stations.module';
     VehiclesModule,
     StationsModule
   ],
+  providers: [ExampleApiService],
   bootstrap: [
     AppComponent
   ]
