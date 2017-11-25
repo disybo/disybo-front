@@ -2,11 +2,10 @@
     <stations-filter fxFlex="100%" [startDateValue]="startDate" [endDateValue]="endDate" (onRefresh)="refresh($event)"></stations-filter>
     <div fxLayout="row">
         <stations-fuel-pumped fxFlex="50%"></stations-fuel-pumped>
-        <stations-fuel-consumption fxFlex="50%"></stations-fuel-consumption>
+        <stations-fuel-consumption fxFlex="50%" [data]="consumptionData"></stations-fuel-consumption>
     </div>
     <div fxLayout="row">
         <stations-overall-comparison [overallData]="overallData" fxFlex="50%"></stations-overall-comparison>
         <stations-fuel-type fxFlex="50%"></stations-fuel-type>
     </div>
 </div>
-

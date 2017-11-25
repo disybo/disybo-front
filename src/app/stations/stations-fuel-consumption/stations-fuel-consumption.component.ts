@@ -1,26 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Consumption } from './../shared/consumption.model';
+import { Component, OnInit, OnChanges, Input, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'stations-fuel-consumption',
   templateUrl: './stations-fuel-consumption.component.html',
   styleUrls: ['./stations-fuel-consumption.component.css']
 })
-export class StationsFuelConsumptionComponent implements OnInit {
+export class StationsFuelConsumptionComponent implements OnInit, OnChanges {
+  @Input() data: Consumption;
+  dataReady: boolean = false;
  
   constructor() { }
 
   ngOnInit() {
   }
 
-  public randomColorGenerator():string {
-    return '#' + (Math.random().toString(16) + '0000000').slice(2, 8); 
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.data.data.length > 0) {
+      this.dataReady = true;
+    }
   }
 
   // lineChart
   public lineChartData:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Station 1'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Station 2'},
+    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Station 3'},
+    {data: [58, 88, 67, 33, 230, 57, 50], label: 'Station 4'}
   ];
   public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions:any = {
@@ -28,72 +34,6 @@ export class StationsFuelConsumptionComponent implements OnInit {
     elements:{line:{fill:false}}
   };
 
-  public lineChartColorsRandom():Array<any> {
-    
-    var colors = []
-    
-    for(var i = 0; i < 3; i++) {
-      colors.push(
-        { 
-          backgroundColor: this.randomColorGenerator(),
-          borderColor: this.randomColorGenerator(),
-          pointBackgroundColor: this.randomColorGenerator(),
-          pointBorderColor: this.randomColorGenerator(),
-          pointHoverBackgroundColor: this.randomColorGenerator(),
-          pointHoverBorderColor: this.randomColorGenerator()
-        }
-      )
-    }
-    return colors
-  }
-
-
-  public lineChartColors:Array<any> = [
-    { 
-      backgroundColor: this.randomColorGenerator(),
-      borderColor: this.randomColorGenerator(),
-      pointBackgroundColor: this.randomColorGenerator(),
-      pointBorderColor: this.randomColorGenerator(),
-      pointHoverBackgroundColor: this.randomColorGenerator(),
-      pointHoverBorderColor: this.randomColorGenerator()
-    },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    }
-  ];
   public lineChartLegend:boolean = true;
   public lineChartType:string = 'line';
-
-  public randomize():void {
-    let _lineChartData:Array<any> = new Array(this.lineChartData.length);
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
-      }
-    }
-    this.lineChartData = _lineChartData;
-  }
-
-  // events
-  public chartClicked(e:any):void {
-    console.log(e);
-  }
-
-  public chartHovered(e:any):void {
-    console.log(e);
-  }
 }
