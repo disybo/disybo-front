@@ -8,6 +8,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatNativeDateModule} from '@angular/material'
 import { MatRadioModule } from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ChartsModule } from 'ng2-charts';
 
 import { StationsComponent } from './stations.component';
@@ -27,6 +28,7 @@ import { StationsService } from './shared/stations.service';
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
+    MatProgressSpinnerModule,
     MatInputModule,
     MatRadioModule,
     FormsModule,
