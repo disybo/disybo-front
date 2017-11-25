@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-nav-list>
+    <div *ngFor="let station of stations">
+      <mat-list-item (click)="goTo(station)">
+        <button mat-button>
+          <mat-icon>local_gas_station</mat-icon>
+          <span>{{station.name}}</span>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-nav-list>
+</mat-card>
