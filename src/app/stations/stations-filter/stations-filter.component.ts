@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'stations-filter',
@@ -10,6 +10,7 @@ export class StationsFilterComponent implements OnInit {
   granularity: string;
   @Input() endDateValue: Date;
   @Input() startDateValue: Date;
+  @Output() onRefresh = new EventEmitter();
 
   constructor() { 
   }
@@ -19,13 +20,6 @@ export class StationsFilterComponent implements OnInit {
   }
 
   refresh() { 
-    
-    console.log(this.dateHelper(this.startDateValue.toDateString()))
-  }
-
-  dateHelper(key: string) {
-    const dateObj = new Date(+key * 1000);
-    // Need to return Date object/ISOString format date as accepted by Material DatePicker component
-    return new Date(dateObj.getFullYear(), dateObj.getUTCMonth(), dateObj.getUTCDate());
+    this.onRefresh.emit({'startDate': this.startDateValue, 'endDate': this.endDateValue, 'granularity': this.granularity })
   }
 }

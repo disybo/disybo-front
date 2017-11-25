@@ -1,4 +1,5 @@
 export class Fuel {
-  type: string;
-  amount: number;
+  station_id: string;
+  display_name: string;
+  fuel_volume: number;
 }

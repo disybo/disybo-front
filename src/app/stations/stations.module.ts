@@ -16,7 +16,7 @@ import { StationsFuelPumpedComponent } from './stations-fuel-pumped/stations-fue
 import { StationsFuelConsumptionComponent } from './stations-fuel-consumption/stations-fuel-consumption.component';
 import { StationsOverallComparisonComponent } from './stations-overall-comparison/stations-overall-comparison.component';
 import { StationsFuelTypeComponent } from './stations-fuel-type/stations-fuel-type.component';
-import { StationsService } from '../stations-registry/shared/stations.service';
+import { StationsService } from './shared/stations.service';
 
 @NgModule({
   imports: [
