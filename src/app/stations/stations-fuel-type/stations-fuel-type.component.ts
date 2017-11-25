@@ -45,7 +45,6 @@ export class StationsFuelTypeComponent implements OnInit, OnChanges {
 
     this.fuelTypeData.data.forEach(station =>
         station.forEach(element => {
-          console.log("WHHDHSA", element)
           switch(element.display_name) {
               case this.dieselLabel: {
                 this.dieselData.push(element.fuel_volume)
@@ -88,32 +87,10 @@ export class StationsFuelTypeComponent implements OnInit, OnChanges {
 
   // events
   public chartClicked(e:any):void {
-    console.log(this.fuelTypeData);
+    console.log(e);
   }
 
   public chartHovered(e:any):void {
     console.log(e);
   }
-
-  public randomize():void {
-    // Only Change 3 values
-    let data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
-    let clone = JSON.parse(JSON.stringify(this.barChartData));
-    clone[0].data = data;
-    this.barChartData = clone;
-    /**
-    * (My guess), for Angular to recognize the change in the dataset
-    * it has to change the dataset variable directly,
-    * so one way around it, is to clone the data, change it and then
-    * assign it;
-    */
-  }
-
 }

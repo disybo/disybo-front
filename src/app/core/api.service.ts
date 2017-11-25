@@ -14,12 +14,9 @@ export abstract class ApiService {
 
   private createRequestOptions(params: any): Object {
     let httpParams = new HttpParams();
-    console.log(params)
     params.forEach(e => {
-      console.log(e)
       httpParams = httpParams.set(e.key, e.value)
     });
-    console.log(httpParams)
     return {
      //headers: new HttpHeaders().set('Authorization', 'my-auth-token'),
      params: httpParams, // /api/items/add?id=3
