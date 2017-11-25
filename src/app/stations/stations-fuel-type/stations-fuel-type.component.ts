@@ -30,14 +30,22 @@ export class StationsFuelTypeComponent implements OnInit, OnChanges {
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true,
-    scales: {
-      xAxes: [{
-          stacked: true
-      }],
-      yAxes: [{
-          stacked: true
-      }]
-  }
+      scales: {
+        yAxes: [{
+          stacked: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Total amount extracted (Liters)'
+          }
+        }],
+        xAxes: [{
+          stacked: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Station'
+          }
+        }]
+    }
   };
 
   changeChartData() {

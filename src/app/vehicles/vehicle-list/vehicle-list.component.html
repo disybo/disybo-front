@@ -1,14 +1,15 @@
 <mat-card>
-  Only show warning and danger
+  Show all
   <mat-checkbox (click)="filterList()"></mat-checkbox>
   <mat-list>
     <div *ngFor="let vehicle of filteredList">
       <mat-list-item>
         <mat-icon mat-list-icon>directions_car</mat-icon>
-        {{ vehicle.name }} - {{vehicle.warningLevel}}
-        <mat-icon mat-list-icon color="accent" *ngIf="vehicle.warningLevel === 'warning'">warning</mat-icon>
-        <mat-icon mat-list-icon color="warn" *ngIf="vehicle.warningLevel === 'danger'">warning</mat-icon>
-        <mat-icon mat-list-icon color="primary" *ngIf="vehicle.warningLevel === 'ok'">favorite</mat-icon>
+        {{ vehicle.vehicle_type }} - {{ vehicle.vehicle_id }} - {{ vehicle.urgency }} - {{ vehicle.description }}
+        <mat-icon mat-list-icon style="color:rgb(255, 229, 179)" *ngIf="vehicle.urgency === 'medium'">warning</mat-icon>
+        <mat-icon mat-list-icon style="color:rgb(254, 98, 131)" *ngIf="vehicle.urgency === 'high'">warning</mat-icon>
+        <mat-icon mat-list-icon style="color: rgb(59, 193, 192)" *ngIf="vehicle.urgency === 'low'">favorite</mat-icon>
+        <mat-icon mat-list-icon style="color: rgb(195, 10, 35)" *ngIf="vehicle.urgency === 'urgent'">warning</mat-icon>
       </mat-list-item>
       <mat-divider></mat-divider>
     </div>

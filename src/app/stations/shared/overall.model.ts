@@ -1,10 +1,9 @@
 export class OverallData {
+  labels: string[];
+  data: number[];
 
-    labels: string[];
-    data: number[];
-
-    constructor() {
-        this.labels = [];
-        this.data = [];
-    }
+  constructor() {
+    this.labels = [];
+    this.data = [];
+  }
 }
