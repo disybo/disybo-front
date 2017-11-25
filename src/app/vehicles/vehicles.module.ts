@@ -18,6 +18,7 @@ import { FuelConsumptionComponent } from './fuel-consumption/fuel-consumption.co
 import { VehiclesFilterComponent } from './vehicles-filter/vehicles-filter.component';
 import { VehiclesPollutionComponent } from './vehicles-pollution/vehicles-pollution.component';
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
+import { VehiclesService } from './shared/vehicles.service';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
     MatButtonModule
   ],
   declarations: [VehiclesComponent, FuelConsumptionComponent, VehiclesFilterComponent, VehiclesPollutionComponent, VehicleListComponent],
-  exports: [VehiclesComponent]
+  exports: [VehiclesComponent],
+  providers: [VehiclesService]
 })
 export class VehiclesModule { }

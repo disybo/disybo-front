@@ -1,7 +1,6 @@
 export class Vehicle {
-    id: string
-    name: string
-    km: number
-    type: string
-    warningLevel: string
+    vehicle_id: string;
+    vehicle_type: string;
+    urgency: string;
+    description: string;
   }
