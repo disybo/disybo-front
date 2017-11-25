@@ -2,12 +2,13 @@
   <mat-card-title>
       <span class="mat-headline">Overall comparison between fuel stations</span>  
   </mat-card-title>
-  <mat-card-content>
-    <canvas baseChart
-            [data]="overallData.data"
-            [labels]="overallData.labels"
-            [chartType]="pieChartType"
-            (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)"></canvas>
-  </mat-card-content>
+  <div *ngIf="dataReady">
+      <mat-card-content>
+          <canvas baseChart
+                  [data]="overallData.data"
+                  [labels]="overallData.labels"
+                  [chartType]="pieChartType"
+                  [options]="chartOptions"></canvas>
+        </mat-card-content>
+  </div>
 </mat-card>

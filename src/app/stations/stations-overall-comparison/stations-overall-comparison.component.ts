@@ -1,35 +1,34 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Fuel } from '../shared/fuel.model'
 import { OverallData } from '../shared/overall.model';
-
+import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'stations-overall-comparison',
   templateUrl: './stations-overall-comparison.component.html',
   styleUrls: ['./stations-overall-comparison.component.css']
 })
-export class StationsOverallComparisonComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-    this.pieChartData = this.overallData.data;
-    this.pieChartLabels = this.overallData.labels;
-  }
+export class StationsOverallComparisonComponent implements OnInit, OnChanges {
+  
   @Input() overallData: OverallData
 
-   // Pie
-   public pieChartData:number[];
-   public pieChartLabels:string[];
-   public pieChartType:string = 'pie';
+  constructor() { }
   
-   // events
-   public chartClicked(e:any):void {
-     console.log(e);
-     console.log(this.overallData)
-   }
-  
-   public chartHovered(e:any):void {
-     console.log(e);
-   }
+  ngOnInit() {
+  }
+
+  // Variable to keep track if the data has arrived
+  public dataReady:boolean = false;
+
+  ngOnChanges(changes): void {
+    if(this.overallData.data.length > 0) {
+      this.dataReady = true;
+    }
+  }
+
+   // Chart parameters
+  public pieChartType:string = 'pie';
+  public chartOptions:any = {
+    responsive: true
+  };
 }
