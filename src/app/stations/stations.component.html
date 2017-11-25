@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="space-around stretch">
-    <stations-filter fxFlex="100%"></stations-filter>
+    <stations-filter fxFlex="100%" [startDateValue]="startDate" [endDateValue]="endDate"></stations-filter>
     <div fxLayout="row">
         <stations-fuel-pumped fxFlex="50%"></stations-fuel-pumped>
         <stations-fuel-consumption fxFlex="50%"></stations-fuel-consumption>

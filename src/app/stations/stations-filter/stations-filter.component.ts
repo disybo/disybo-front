@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'stations-filter',
@@ -8,20 +8,18 @@ import { Component, OnInit} from '@angular/core';
 export class StationsFilterComponent implements OnInit {
 
   granularity: string;
-  endDateValue: Date;
-  startDateValue: Date;
+  @Input() endDateValue: Date;
+  @Input() startDateValue: Date;
 
   constructor() { 
-   this.ngOnInit()
   }
 
   ngOnInit() {
     this.granularity = "yearly"
-    this.startDateValue = new Date(2016, 1, 1, 0, 0, 0, 0)
-    this.endDateValue = new Date(2017, 1, 1, 0, 0, 0, 0)
   }
 
   refresh() { 
+    
     console.log(this.dateHelper(this.startDateValue.toDateString()))
   }
 
