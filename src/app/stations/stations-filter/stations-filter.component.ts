@@ -7,16 +7,27 @@ import { Component, OnInit} from '@angular/core';
 })
 export class StationsFilterComponent implements OnInit {
 
-  constructor() { }
+  granularity: string;
+  endDateValue: Date;
+  startDateValue: Date;
 
-  ngOnInit() {
+  constructor() { 
+   this.ngOnInit()
   }
 
-  granularity: string;
+  ngOnInit() {
+    this.granularity = "yearly"
+    this.startDateValue = new Date(2016, 1, 1, 0, 0, 0, 0)
+    this.endDateValue = new Date(2017, 1, 1, 0, 0, 0, 0)
+  }
 
-  granularity_choices = [
-    'Daily',
-    'Monthly',
-    'Yearly'
-  ];
+  refresh() { 
+    console.log(this.dateHelper(this.startDateValue.toDateString()))
+  }
+
+  dateHelper(key: string) {
+    const dateObj = new Date(+key * 1000);
+    // Need to return Date object/ISOString format date as accepted by Material DatePicker component
+    return new Date(dateObj.getFullYear(), dateObj.getUTCMonth(), dateObj.getUTCDate());
+  }
 }

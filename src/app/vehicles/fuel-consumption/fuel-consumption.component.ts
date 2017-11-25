@@ -20,7 +20,7 @@ export class FuelConsumptionComponent implements OnInit {
     blueop: 'rgba(54, 162, 235, 0.2)',
     purple: 'rgb(153, 102, 255)',
     purpleop: 'rgba(153, 102, 255,0.2)',
-    grey: 'rgb(201, 203, 207)'
+    grey: 'rgb(201, 203, 207)',
     greyop: 'rgba(201, 203, 207, 0.2)'
   }; 
 
