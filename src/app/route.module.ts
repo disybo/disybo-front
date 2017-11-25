@@ -5,8 +5,8 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { StationsComponent } from './stations/stations.component';
 
 const appRoutes: Routes = [
-    { path: 'vehicle', component: VehiclesComponent },
-    { path: 'station',      component: StationsComponent },
+    { path: 'vehicles', component: VehiclesComponent },
+    { path: 'stations',      component: StationsComponent },
     { path: '**', component: VehiclesComponent }
   ];
 

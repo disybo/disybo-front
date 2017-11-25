@@ -7,3 +7,7 @@ body {
   min-width: 100vw;
   width: 100vw;
 }
+
+mat-sidenav-container > .mat-drawer {
+  min-width: 15em;
+}

@@ -6,7 +6,20 @@
 </mat-toolbar>
 <mat-sidenav-container fxFill>
   <mat-sidenav #sidenav>
-    Side nav
+    <mat-nav-list>
+      <mat-list-item>
+        <a matLine routerLink="/vehicles" routerLinkActive="active" (click)="sidenav.close()">
+          <mat-icon>directions_car</mat-icon> Vehicles
+        </a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <a matLine routerLink="/stations" routerLinkActive="active" (click)="sidenav.close()">
+          <mat-icon>local_gas_station</mat-icon> Stations
+        </a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
   </mat-sidenav>
 
   <div>
