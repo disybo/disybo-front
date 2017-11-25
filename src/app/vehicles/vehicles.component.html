@@ -1,9 +1,8 @@
 <div fxLayout="column" fxLayoutAlign="space-around stretch">
-    <app-vehicles-filter fxFlex="100%"></app-vehicles-filter>
+    <app-vehicles-filter fxFlex></app-vehicles-filter>
     <div fxLayout="row">
-        <app-fuel-consumption fxFlex="33%"></app-fuel-consumption>
-        <app-vehicles-pollution fxFlex="33%"></app-vehicles-pollution>
-        <app-vehicle-list fxFlex="33%" [vehicleList]="vehicleList"></app-vehicle-list>
+        <app-fuel-consumption fxFlex="50"></app-fuel-consumption>
+        <app-vehicles-pollution fxFlex="50"></app-vehicles-pollution>
     </div>
+    <app-vehicle-list fxFlex [vehicleList]="vehicleList"></app-vehicle-list>
 </div>
-
