@@ -13,6 +13,6 @@ export class AppComponent implements OnInit {
   constructor(private exampleService: ExampleApiService) {}
 
   ngOnInit(): void {
-    this.exampleService.hello();
+    //this.exampleService.hello();
   }
 }
