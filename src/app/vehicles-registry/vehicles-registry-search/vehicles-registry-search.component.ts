@@ -29,4 +29,8 @@ export class VehiclesRegistrySearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  search(){
+    console.log("SEARCH")
+  }
+
 }
