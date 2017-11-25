@@ -1,15 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Vehicle } from '../../shared/models/vehicle.model';
+import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-vehicle-list',
   templateUrl: './vehicle-list.component.html',
   styleUrls: ['./vehicle-list.component.css']
 })
-export class VehicleListComponent implements OnInit {
+export class VehicleListComponent implements OnInit, OnChanges {
   @Input() vehicleList: Vehicle[]
   filteredList: Vehicle[] = []
-  checked: boolean = false
+  checked: boolean = true
 
   constructor() { }
 
@@ -18,6 +19,11 @@ export class VehicleListComponent implements OnInit {
     this.filteredList = this.vehicleList
   }
 
+  ngOnChanges(changes): void {
+    //throw new Error("Method not implemented.");
+    this.filteredList = this.vehicleList
+    this.filterList()
+  }
   // when checkbox is click either filter the list or reset it
   filterList() {
     this.checked = !this.checked
@@ -27,6 +33,6 @@ export class VehicleListComponent implements OnInit {
       return
     } 
 
-    this.filteredList = this.vehicleList.filter(x => x.warningLevel !== 'ok')
+    this.filteredList = this.vehicleList.filter(x => x.urgency !== 'low')
   }
 }
