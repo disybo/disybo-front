@@ -8,6 +8,7 @@ import { ChartsModule } from 'ng2-charts';
 import { VehicleComponent } from './vehicle.component';
 import { VehicleLocationComponent } from './vehicle-location/vehicle-location.component';
 import { VehicleConsumptionComponent } from './vehicle-consumption/vehicle-consumption.component';
+import { LocationService } from './shared/location.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { VehicleConsumptionComponent } from './vehicle-consumption/vehicle-consu
     MatCardModule,
     AgmCoreModule
   ],
-  declarations: [VehicleComponent, VehicleLocationComponent, VehicleConsumptionComponent]
+  declarations: [VehicleComponent, VehicleLocationComponent, VehicleConsumptionComponent],
+  providers: [LocationService]
 })
 export class VehicleModule { }
