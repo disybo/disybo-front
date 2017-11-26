@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/';
 
 import { VehiclesComponent } from './vehicles.component';
 import { FuelConsumptionComponent } from './fuel-consumption/fuel-consumption.component';
@@ -34,7 +35,8 @@ import { VehiclesService } from './shared/vehicles.service';
     MatFormFieldModule,
     MatRadioModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   declarations: [VehiclesComponent, FuelConsumptionComponent, VehiclesFilterComponent, VehiclesPollutionComponent, VehicleListComponent],
   exports: [VehiclesComponent],

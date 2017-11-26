@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="space-around stretch">
     <app-vehicles-filter fxFlex></app-vehicles-filter>
     <div fxLayout="row">
-        <app-fuel-consumption fxFlex="50"></app-fuel-consumption>
+        <app-fuel-consumption (onAddCarType)="refresh($event)" [vehicleTypeData]="vehicleTypeData" [vehicleTypes]="vehicleTypes" fxFlex="50"></app-fuel-consumption>
         <app-vehicles-pollution fxFlex="50"></app-vehicles-pollution>
     </div>
     <app-vehicle-list fxFlex [vehicleList]="vehicleAlerts"></app-vehicle-list>

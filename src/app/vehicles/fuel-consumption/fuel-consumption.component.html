@@ -1,7 +1,16 @@
 <mat-card>
-  <mat-card-title>Fuel Consumption based on car types</mat-card-title>
+  <mat-card-title>
+    <mat-form-field>
+        <mat-select [(ngModel)]="carTypeID"  placeholder="Choose car type to display on chart">
+            <mat-option *ngFor="let vehicleType of vehicleTypes" [value]="vehicleType.id">
+                {{vehicleType.display_name}}
+              </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="addCarTypeToChart()">Change</button> 
+  </mat-card-title>
   <mat-card-content>
     <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
-      [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
   </mat-card-content>
 </mat-card>
