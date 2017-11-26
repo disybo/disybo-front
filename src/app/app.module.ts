@@ -22,7 +22,7 @@ import { VehiclesRegistryModule } from './vehicles-registry/vehicles-registry.mo
 import { StationModule } from './station/station.module';
 import { StationsModule } from './stations/stations.module';
 import { StationsRegistryModule } from './stations-registry/stations-registry.module';
-import { FrontPageModule } from './front-page/front-page.module'
+
 
 import { secret } from '../environments/secret';
 
@@ -51,8 +51,7 @@ import { secret } from '../environments/secret';
     VehiclesRegistryModule,
     StationModule,
     StationsModule,
-    StationsRegistryModule,
-    FrontPageModule
+    StationsRegistryModule
   ],
   providers: [ExampleApiService],
   bootstrap: [
