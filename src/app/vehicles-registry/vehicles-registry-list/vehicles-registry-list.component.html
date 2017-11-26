@@ -1,14 +1,49 @@
 <mat-card>
-  <mat-nav-list>
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="vehicle_id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.vehicle_id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="year">
+      <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.year}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="goTo(row)"></mat-row>
+  </mat-table>
+  <!--<mat-nav-list>
     <div *ngFor="let vehicle of vehicles">
       <mat-list-item (click)="goTo(vehicle)">
-        <mat-icon>directions_car</mat-icon>
-        <span>{{vehicle.vehicle_id}}</span>
-        <span>{{vehicle.description}}</span>
-        <span>{{vehicle.type}}</span>
-        <span>{{vehicle.year}}</span>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-icon>directions_car</mat-icon>
+          <span>{{vehicle.vehicle_id}}</span>
+          <span>{{vehicle.description}}</span>
+          <span>{{vehicle.type}}</span>
+          <span>{{vehicle.year}}</span>
+        </div>
+
       </mat-list-item>
       <mat-divider></mat-divider>
     </div>
-  </mat-nav-list>
+  </mat-nav-list>-->
 </mat-card>
