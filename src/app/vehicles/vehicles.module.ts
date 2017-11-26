@@ -13,6 +13,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 import { VehiclesComponent } from './vehicles.component';
 import { FuelConsumptionComponent } from './fuel-consumption/fuel-consumption.component';
@@ -36,7 +38,8 @@ import { VehiclesService } from './shared/vehicles.service';
     MatRadioModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   declarations: [VehiclesComponent, FuelConsumptionComponent, VehiclesFilterComponent, VehiclesPollutionComponent, VehicleListComponent],
   exports: [VehiclesComponent],

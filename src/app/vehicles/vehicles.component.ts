@@ -21,7 +21,7 @@ export class VehiclesComponent implements OnInit {
     this.vehiclesService.typedata.subscribe(update => this.vehicleTypeData = update)
     this.vehiclesService.getVehicleAlerts()
     this.vehiclesService.getVehicleTypes()
-    this.vehiclesService.getVehiclyTypeData("B1")
+    this.vehiclesService.getVehiclyTypeData("47")
   }
 
   refresh(data:any) {

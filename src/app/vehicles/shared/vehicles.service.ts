@@ -49,10 +49,9 @@ export class VehiclesService extends ApiService {
       {key: 'id', value: id}
     ])
     .subscribe(data => {
-        console.log(data)
         let temp_data = new VehicleTypeData()
-        temp_data.name = data.display_name;
-        data.fuel_data.forEach(element => {
+        temp_data.name = data[0].vehicle_type;
+        data[0].fuel_data.forEach(element => {
           temp_data.data.push(new Fuel(element.month, element.fuel_volume))
         });
         this.vehicleTypeData.next(temp_data);

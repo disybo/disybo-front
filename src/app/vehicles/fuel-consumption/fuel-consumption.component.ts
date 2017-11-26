@@ -10,36 +10,64 @@ import { VehicleTypeData } from '../shared/vehicleTypeData.model';
 })
 export class FuelConsumptionComponent implements OnInit, OnChanges  {
   
-  
-  ngOnChanges(changes): void {
-    if (this.lineChartData.length > 0) {
-      
-    }
-  }
-
   @Input() vehicleTypes: VehicleType[];
   @Input() vehicleTypeData: VehicleTypeData;
   @Output() onAddCarType = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
-  //
+  month: string[] = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+     "November",
+     "December",
+    ];
+
+  dataReady:boolean = false;
   carTypeID: string; 
 
-  public addCarTypeToChart() {
-    this.onAddCarType.emit({'id': this.carTypeID})
+  ngOnChanges(changes): void {
+    if (this.vehicleTypeData.data.length > 0) {
+      this.updateVehicleType();
+      this.dataReady = true;
+    } 
+  }
+
+  updateVehicleType() {
+    let tempData = []
+    this.vehicleTypeData.data.forEach(element => {
+      this.lineChartLabels.push(this.month[new Date(element.display_name).getMonth()] + " " + element.display_name.substring(2, 4));
+      tempData.push(element.fuel_volume)
+    })  
+    this.lineChartData.push({'data': tempData, 'label': this.vehicleTypeData.name})
   }
 
   // lineChart
-  public lineChartData:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Wille 300'},
-  ];
-  public lineChartLabels:Array<any> = 
-  ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
+  public lineChartData:Array<any> = [];
+  
+  public lineChartLabels:Array<any> = [];
+  public lineChartlabel: string;
+
+  public addCarTypeToChart() {
+    this.dataReady = false;
+    this.vehicleTypeData = new VehicleTypeData();
+    this.lineChartData = [];
+    this.lineChartLabels = [];
+    this.lineChartlabel = "";
+    this.onAddCarType.emit({'id': this.carTypeID});
+  }
+
+  
 
   public lineChartOptions:any = {
     elements:{line:{fill:false}},
