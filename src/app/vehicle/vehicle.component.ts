@@ -16,7 +16,7 @@ export class VehicleComponent implements OnInit {
   constructor(private locationService: LocationService, private service: VehicleService) { }
 
   ngOnInit() {
-    this.locationService.location.subscribe(update => this.location = update);
+    //this.locationService.location.subscribe(update => this.location = update);
     this.service.consumption.subscribe(update => this.consumptionData = update);
     this.service.getConsumption();
     //this.locationService.updateLocation("A31204");
