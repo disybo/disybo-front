@@ -1,4 +1,9 @@
 <mat-card>
   <mat-card-title>Vehicle Consumption</mat-card-title>
-  <canvas baseChart [data]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [chartType]="lineChartType"></canvas>
+  <div *ngIf="dataReady">
+    <canvas baseChart [data]="data.data" [labels]="data.labels" [options]="lineChartOptions" [chartType]="lineChartType"></canvas>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!dataReady ">
+    <mat-spinner></mat-spinner>
+  </div>
 </mat-card>
