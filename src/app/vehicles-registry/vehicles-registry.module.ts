@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 
 import { VehiclesRegistryComponent } from './vehicles-registry.component';
 import { VehiclesRegistrySearchComponent } from './vehicles-registry-search/vehicles-registry-search.component';
@@ -24,6 +25,7 @@ import { VehiclesService } from './shared/vehicles.service';
     MatCardModule,
     MatListModule,
     MatButtonModule,
+    MatTableModule,
     MatIconModule
   ],
   declarations: [VehiclesRegistryComponent, VehiclesRegistrySearchComponent, VehiclesRegistryListComponent],
