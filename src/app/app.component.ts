@@ -8,7 +8,7 @@ import { ExampleApiService } from './exampleApi.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Disybo';
+  title = 'Staralytics';
 
   constructor(private exampleService: ExampleApiService) {}
 
